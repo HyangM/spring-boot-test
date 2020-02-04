@@ -13,13 +13,18 @@ public class Mem {
 	private String username;
 	private String password;
 	private String email;
+	private String profile;
 	private Timestamp createDate;
 	
 	@Builder
-	public Mem(String username, String password, String email, Timestamp createDate) {
+	public Mem(String username, String password, String email, String profile, Timestamp createDate) {
+		super();
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.profile = profile;
 		this.createDate = createDate;
-	}	
+	}
+	
+	
 }

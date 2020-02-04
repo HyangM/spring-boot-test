@@ -18,5 +18,5 @@ public interface MemRepository {
 	// 회원수정
 	int update(RequestMemUpdateDto mem);
 	// 회원삭제
-	int delete(RequestMemDeleteDto mem);
+	int delete(int id);
 }

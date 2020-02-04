@@ -7,9 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RequestUserDto {
+public class ResponseUserDto extends ResponseDto{
 	
+	private ResponseDto status;
 	private int id;
-	private String username;
-
+	private String password;
+	private String email;
 }

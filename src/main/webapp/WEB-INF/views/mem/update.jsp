@@ -41,7 +41,7 @@
 			url: '/mem/api/update',
 			data: JSON.stringify(data),
 			contentType: 'application/json; charset=utf-8',
-			dataType: 'text'
+			dataType: 'json'
 		}).done(function(result){
 			if(result === 'ok'){
 				alert('회원정보 수정 성공');
@@ -51,10 +51,35 @@
 			}
 			
 		}).fail(function(result){
-			alert('회원정보 수정 실패');			
+			alert('서버오류');			
 		});
 	});
+
 	
+	$('#mem_delete_proc').on('click', function(){
+
+		let id = $('#id').val(); 
+
+		$.ajax({
+			type: 'DELETE',
+			url: '/mem/api/delete/'+id,
+			dataType: 'text'
+		}).done(function(result){
+			console.log(result)
+			if(result === 'ok'){
+				alert('회원정보 삭제 성공');
+				location.href= '/mem';
+			}else{
+				console.log(result)
+				alert('회원정보 삭제 실패');
+			}
+		}).fail(function(result){
+			console.log(result)
+			alert('서버오류');			
+		});
+	});
+
+/* 	
 	$('#mem_delete_proc').on('click', function(){
 		let data = {
 			id: $('#id').val()
@@ -77,7 +102,7 @@
 		}).fail(function(result){
 			alert('회원정보 삭제 실패');			
 		});
-	});
+	}); */
 </script>
 </body>
 </html>
